@@ -5,6 +5,12 @@ if (!isset($_SESSION['subject'])) {
   header('Location: step2.php');
 }
 
+if (isset($_POST['print'])) {
+  $_SESSION['Q'] = $_POST['Q'];
+  $_SESSION['i'] = $_POST['i'];
+
+  header('Location: step3.php');
+}
 // Inisialisasi
 $n_criteria = $_SESSION['n_criteria'];
 $n_subject = $_SESSION['n_subject'];
@@ -124,7 +130,10 @@ sort($Q);
               </tr>
             <?php } ?>
           </table>
-          <a href="index.php"><button class="btnNext" type="button">Hitung Lagi</button></a>
+          <a href="index.php"><button class="btnNext" type="button">Selesai</button></a>
+          <a href="cetak.php">
+            <<button class="btnNext" onClick="window.print();">Cetak</button>
+          </a>
         </form>
       </div>
     </div>
@@ -144,8 +153,6 @@ sort($Q);
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-
-
 </body>
 
 </html>
