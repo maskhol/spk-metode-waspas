@@ -118,7 +118,7 @@ sort($Q);
           <h4 class="text">METODE WASPAS</h4>
           <table class="table text">
             <tr>
-              <th>Subjek</th>
+              <th>Alternatif</th>
               <th>Nilai</th>
               <th>Peringkat</th>
             </tr>
